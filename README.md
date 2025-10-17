@@ -2,10 +2,16 @@
 SYSEN 5300 Hackathon Team: Lean on Me Fall 2025
 # Lean On Me: Inpatient Wait Time Quality Control System
 
-## Overview
-Hospitals require seamless coordination between nurses and doctors to ensure timely and effective patient care. However, patients in our hospital system have reported wide and irregular gaps between staff visits during inpatient stays—impacting both perceived and actual treatment quality. This project was developed during the SYSEN 5300 Hackathon to address that challenge.
+## Background
 
-## Objective
+Nestled in a quiet corner of rural New York, our hospital is small but mighty. With just 80 beds, 3 dedicated doctors, and a team of 10 nurses, we serve a tight-knit community that relies on us for compassionate and consistent care. But like many under-resourced facilities, we face challenges that larger hospitals often overlook—especially when it comes to coordinating staff across floors.
+
+Patients have increasingly voiced concerns about long and unpredictable gaps between staff visits during their inpatient stays. These delays not only affect their perception of care but can also lead to extended hospitalizations and missed treatment opportunities. With limited personnel and no existing system to track these interactions, we knew something had to change.
+
+That’s why our team developed **Lean On Me**—a lightweight, data-driven quality control system designed to monitor inpatient wait times, flag excessive delays, and empower staff to respond more efficiently. Built during the SYSEN 5300 Hackathon, this tool simulates hospital workflows using synthetic data and applies Six Sigma principles to help small hospitals like ours deliver big improvements in care.
+
+
+## Project Scope
 To build a lightweight, data-driven tool that tracks inpatient wait times, identifies excessive delays in staff visits, and provides actionable alerts to improve care quality and responsiveness.
 
 ## Features
