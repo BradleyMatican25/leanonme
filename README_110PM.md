@@ -10,17 +10,24 @@
 
 ## 📋 Table of Contents
 
+### How to use the Dashboard
+- [Data Requirements](#data-requirements)
+- [Installation & Setup](#installation--setup)
+- [How to Use the Dashboard](#how-to-use-the-dashboard)
+
+### Lean on Me's Background
 - [Backstory: From Crisis to Solution](#backstory-from-crisis-to-solution)
 - [Problem Statement & Project Scope](#problem-statement--project-scope)
 - [Solution Overview](#solution-overview)
 - [Impact & Results](#impact--results)
-- [Data Requirements](#data-requirements)
-- [Installation & Setup](#installation--setup)
-- [How to Use the Dashboard](#how-to-use-the-dashboard)
 - [Six Sigma Methodology](#six-sigma-methodology)
 - [Critical Assumptions](#critical-assumptions)
 - [Stakeholder Details & Use Cases](#stakeholder-details--use-cases)
 - [Team](#team)
+
+
+
+
 
 ---
 
@@ -286,6 +293,60 @@ This system is designed for:
 - **Large academic medical centers** (300+ beds) have dedicated IT teams, advanced EMR, specialized nursing coordinators—less applicable
 - **Very small hospitals** (<50 beds) may have adequate informal coordination already
 - **Rural hospitals** often struggle with staffing, making workload balancing critical (**target audience**)
+
+## Root Cause Analysis: Fishbone Diagram
+```mermaid
+graph LR
+    A[IRREGULAR PATIENT<br/>CARE GAPS<br/>8+ hours between visits] 
+
+    B1[PEOPLE]
+    B2[PROCESS]
+    B3[TECHNOLOGY]
+    B4[MEASUREMENT]
+    
+    B1 --> C1[No workload visibility]
+    B1 --> C2[Charge nurse uses<br/>'gut feeling' for assignments]
+    B1 --> C3[Nurses unaware of<br/>colleagues' patient loads]
+    B1 --> C4[No accountability for<br/>visit frequency]
+    
+    B2 --> D1[No systematic<br/>assignment algorithm]
+    B2 --> D2[Acuity not considered<br/>in assignments]
+    B2 --> D3[Geographic proximity<br/>prioritized over workload]
+    B2 --> D4[No reassignment protocol<br/>mid-shift]
+    
+    B3 --> E1[No real-time<br/>monitoring system]
+    B3 --> E2[Manual charting delays]
+    B3 --> E3[No alerts for<br/>threshold violations]
+    B3 --> E4[EMR doesn't calculate<br/>wait times]
+    
+    B4 --> F1[No standard definition<br/>of 'overdue visit']
+    B4 --> F2[No compliance tracking]
+    B4 --> F3[No workload variance<br/>measurement]
+    B4 --> F4[Quality metrics reported<br/>monthly, not real-time]
+    
+    C1 --> A
+    C2 --> A
+    C3 --> A
+    C4 --> A
+    D1 --> A
+    D2 --> A
+    D3 --> A
+    D4 --> A
+    E1 --> A
+    E2 --> A
+    E3 --> A
+    E4 --> A
+    F1 --> A
+    F2 --> A
+    F3 --> A
+    F4 --> A
+    
+    style A fill:#ff9999
+    style B1 fill:#e1f5ff
+    style B2 fill:#fff3cd
+    style B3 fill:#d4edda
+    style B4 fill:#f8d7da
+
 
 ---
 
