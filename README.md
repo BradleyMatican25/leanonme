@@ -3,6 +3,12 @@
 **SYSEN 5300 Six Sigma Hackathon 2025 - Cornell University**
 
 ---
+## Backstory
+Nestled in a quiet corner of rural New York, our hospital is small but mighty. With just 80 beds, 2 dedicated doctors, and a team of 9 nurses, we serve a tight-knit community that relies on us for compassionate and consistent care. But like many under-resourced facilities, we face challenges that larger hospitals often overlook—especially when it comes to coordinating staff across floors.
+
+Patients have increasingly voiced concerns about long and unpredictable gaps between staff visits during their inpatient stays. These delays not only affect their perception of care but can also lead to extended hospitalizations and missed treatment opportunities. With limited personnel and no existing system to track these interactions, we knew something had to change.
+
+That’s why our team developed Lean On Me—a lightweight, data-driven quality control system designed to monitor inpatient wait times, flag excessive delays, and empower staff to respond more efficiently. Built during the SYSEN 5300 Hackathon, this tool simulates hospital workflows using synthetic data and applies Six Sigma principles to help small hospitals like ours deliver big improvements in care.
 
 ## Background: The Hospital Context
 
