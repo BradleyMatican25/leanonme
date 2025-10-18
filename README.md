@@ -936,7 +936,7 @@ PEOPLE                          PROCESS                         TECHNOLOGY      
 
 **Problem:** Patient P042 (High Acuity) waited 9.5 hours between visits
 
-| Why # | Question | Answer |
+| Why? | Question | Answer |
 |-------|----------|--------|
 | **1** | Why did P042 wait 9.5 hours? | Because assigned nurse (N12) didn't visit |
 | **2** | Why didn't N12 visit? | Because N12 was handling 12 patients and couldn't get to everyone |
