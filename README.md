@@ -12,7 +12,7 @@
 
 ### How to use the Dashboard
 - [Data Requirements](#data-requirements)
-- [Installation & Setup](#installation-setup)
+- [Installation & Setup](#installation--setup)
 - [How to Use the Dashboard](#how-to-use-the-dashboard)
 
 ### Nurse Ticktock's Background
