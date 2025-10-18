@@ -38,14 +38,14 @@ St. Mary's Hospital sits on the outskirts of Ithaca, New York—a 130-bed commun
 
 #### The Numbers Don't Lie
 
-In February 2024, Chief Nursing Officer Patricia Rodriguez was reviewing monthly patient satisfaction surveys when a pattern emerged. Patient complaints about nursing wait times had begun appearing with alarming frequency:
+In February 2025, Chief Nursing Officer Patricia Rodriguez was reviewing monthly patient satisfaction surveys when a pattern emerged. Patient complaints about nursing wait times had begun appearing with alarming frequency:
 
 | Month | Complaints |
 |-------|-----------|
-| **February 2024** | 5 complaints |
-| **May 2024** | 8 complaints |
-| **August 2024** | 15 complaints |
-| **September 2024** | 18 complaints |
+| **February 2025** | 5 complaints |
+| **May 2025** | 8 complaints |
+| **August 2025** | 15 complaints |
+| **September 2025** | 18 complaints |
 
 **In just 7 months, patient complaints about nursing responsiveness had tripled.**
 
