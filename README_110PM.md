@@ -1016,6 +1016,226 @@ All assumptions must be validated before implementation. These are organized by 
 **Challenge:** Retention improvements take months; HR needs patience; other factors may influence turnover
 
 ---
+## ## Prototype: The Solution Architecture
+
+### System Overview
+
+Our solution consists of three integrated components:
+```mermaid
+flowchart TB
+    A[Patient Admission] --> B[Acuity Assessment<br/>High/Medium/Low]
+    B --> C[Initial Nurse Assignment<br/>Acuity-Weighted Algorithm]
+    C --> D{Dashboard Monitoring}
+    
+    D --> E[Real-Time Calculations]
+    E --> E1[Time Since Last Visit]
+    E --> E2[Staff Workload Scores]
+    E --> E3[Compliance Rate]
+    
+    E1 --> F{Threshold<br/>Exceeded?}
+    F -->|Yes| G[🔴 ALERT Generated]
+    F -->|No| D
+    
+    E2 --> H{Workload<br/>Imbalance?}
+    H -->|Yes| I[Reassignment<br/>Recommendation]
+    H -->|No| D
+    
+    G --> J[Charge Nurse Action]
+    I --> J
+    J --> K[Patient Reassignment]
+    K --> D
+    
+    D --> L[Patient Discharge]
+    L --> M[Billing Settlement]
+    
+    style A fill:#e1f5ff
+    style D fill:#fff3cd
+    style G fill:#ff9999
+    style I fill:#f39c12
+    style M fill:#d4edda
+```
+### AS-IS Process (Current State)
+```mermaid
+flowchart LR
+    A[Shift Starts<br/>7am/3pm/11pm] --> B[Charge Nurse<br/>Reviews Patient List]
+    B --> C[Assigns Based on<br/>Room Proximity<br/>'Gut Feeling']
+    C --> D[Nurses Begin Rounds]
+    D --> E{Patient<br/>Complains?}
+    E -->|No| F[Continue Current<br/>Assignments]
+    E -->|Yes| G[Reactive<br/>Reassignment]
+    F --> H[End of Shift]
+    G --> H
+    H --> I[Discover Problems<br/>in Quality Meeting<br/>Next Month]
+    
+    style C fill:#ff9999,color:#fff
+    style E fill:#f39c12
+    style I fill:#ff9999,color:#fff
+```
+
+**Problems with AS-IS:**
+- 🔴 No visibility into workload imbalance
+- 🔴 Reactive rather than proactive
+- 🔴 Problems discovered too late
+- 🔴 No data-driven decision making
+
+---
+
+### TO-BE Process (Improved State)
+```mermaid
+flowchart LR
+    A[Shift Starts<br/>7am/3pm/11pm] --> B[Dashboard Shows<br/>Current Status]
+    B --> C[Workload Algorithm<br/>Recommends Assignments<br/>Based on Acuity Scores]
+    C --> D[Charge Nurse Reviews<br/>& Approves]
+    D --> E[Nurses Begin Rounds]
+    E --> F[Real-Time Monitoring]
+    F --> G{Alert<br/>Triggered?}
+    G -->|Yes| H[Immediate<br/>Reassignment]
+    G -->|No| F
+    H --> F
+    F --> I{Shift<br/>End?}
+    I -->|No| F
+    I -->|Yes| J[Review Metrics<br/>Compliance: 94%<br/>Variance: 2.9]
+    
+    style C fill:#00a65a,color:#fff
+    style F fill:#fff3cd
+    style H fill:#00a65a,color:#fff
+    style J fill:#00a65a,color:#fff
+```
+
+**Improvements in TO-BE:**
+- ✅ Proactive workload balancing
+- ✅ Real-time visibility and alerts
+- ✅ Data-driven assignments
+- ✅ Continuous monitoring and adjustment
+- ✅ Immediate problem detection
+
+---
+
+## End-to-End Patient Journey
+
+### Complete Workflow with Dashboard Integration
+
+#### **Phase 1: Patient Onboarding (0-30 minutes)**
+```mermaid
+flowchart TD
+    A[Patient Arrives<br/>from ER/ICU] --> B[Admissions Clerk<br/>Creates Patient Record]
+    B --> B1[Collect Demographics<br/>Name, DOB, Insurance]
+    B1 --> B2[Collect Medical History<br/>Allergies, Medications]
+    B2 --> C[Assign Room<br/>Based on Availability]
+    C --> D[Nurse Completes<br/>Acuity Assessment]
+    D --> D1{Acuity Level?}
+    D1 -->|High| E1[High Acuity<br/>3 points<br/>2-hour threshold]
+    D1 -->|Medium| E2[Medium Acuity<br/>2 points<br/>4-hour threshold]
+    D1 -->|Low| E3[Low Acuity<br/>1 point<br/>6-hour threshold]
+    E1 --> F[Dashboard Updates<br/>Patient Added]
+    E2 --> F
+    E3 --> F
+    F --> G[Assignment Algorithm<br/>Calculates Best Nurse]
+    G --> H[Charge Nurse<br/>Reviews & Assigns]
+    H --> I[Patient Officially<br/>Assigned to Nurse]
+    I --> J[First Visit Logged<br/>Timer Starts]
+    
+    style D1 fill:#fff3cd
+    style F fill:#00a65a,color:#fff
+    style G fill:#00a65a,color:#fff
+```
+
+**Data Captured:**
+- Patient ID (auto-generated: P101-P230)
+- Room Number (301-320)
+- Admission Timestamp
+- Acuity Level (High/Medium/Low)
+- Insurance Verification Status
+- Assigned Nurse ID
+
+**Response Time:** 30 minutes from arrival to room assignment
+
+---
+
+#### **Phase 2: Active Care Period (Days 1-5)**
+```mermaid
+flowchart TD
+    A[Patient in Room<br/>Receiving Care] --> B{Dashboard<br/>Monitoring}
+    B --> C[Calculate Hours<br/>Since Last Visit]
+    C --> D{Within<br/>Threshold?}
+    D -->|Yes| E[Status: OK 🟢]
+    D -->|No| F{How Much<br/>Over?}
+    F -->|1-1.5x| G[Status: WARNING 🟡]
+    F -->|>1.5x| H[Status: CRITICAL 🔴]
+    
+    E --> B
+    G --> I[Notify Charge Nurse]
+    H --> J[ALERT: Immediate<br/>Action Required]
+    
+    I --> K{Workload<br/>Issue?}
+    K -->|Yes| L[Generate<br/>Reassignment<br/>Recommendation]
+    K -->|No| M[Nurse Prioritizes<br/>This Patient]
+    
+    J --> K
+    L --> N[Charge Nurse<br/>Executes Reassignment]
+    M --> O[Visit Conducted]
+    N --> O
+    O --> P[Visit Logged<br/>in Dashboard]
+    P --> Q[Timer Resets]
+    Q --> B
+    
+    style H fill:#ff9999,color:#fff
+    style J fill:#ff9999,color:#fff
+    style L fill:#f39c12
+    style O fill:#00a65a,color:#fff
+```
+
+**Continuous Monitoring Includes:**
+- Visit frequency per patient
+- Staff workload balance (variance tracking)
+- Compliance rate calculations
+- Alert generation and escalation
+
+**Response Time Targets:**
+- WARNING alerts: Addressed within 30 minutes
+- CRITICAL alerts: Immediate response (<10 minutes)
+
+---
+
+#### **Phase 3: Discharge & Billing (Final Day)**
+```mermaid
+flowchart TD
+    A[Physician Orders<br/>Discharge] --> B[Discharge Nurse<br/>Completes Checklist]
+    B --> B1[Final Assessment<br/>& Vital Signs]
+    B1 --> B2[Medication<br/>Reconciliation]
+    B2 --> B3[Patient Education<br/>& Instructions]
+    B3 --> C[Social Worker<br/>Arranges Follow-Up]
+    C --> D{Insurance<br/>Pre-Authorized?}
+    D -->|Yes| E[Generate Bill]
+    D -->|No| F[Contact Insurance<br/>For Authorization]
+    F --> E
+    E --> G[Calculate Charges]
+    G --> G1[Room Charges<br/>Days × $1,200]
+    G --> G2[Nursing Visits<br/>Count × $85]
+    G --> G3[Medications &<br/>Supplies]
+    G1 --> H[Total Bill<br/>Generated]
+    G2 --> H
+    G3 --> H
+    H --> I{Payment<br/>Method?}
+    I -->|Insurance| J[Submit Claim]
+    I -->|Self-Pay| K[Patient Pays<br/>Co-Pay/Deductible]
+    J --> L[Patient Discharged]
+    K --> L
+    L --> M[Dashboard Updates<br/>Patient Removed<br/>Bed Available]
+    M --> N[Room Cleaned<br/>Ready for New Patient]
+    
+    style E fill:#fff3cd
+    style H fill:#fff3cd
+    style L fill:#00a65a,color:#fff
+    style M fill:#00a65a,color:#fff
+```
+
+**Billing Details Tracked:**
+- Length of stay (admission to discharge)
+- Total number of nursing visits
+- Visit duration (used for charging)
+- Medications administered
+- Procedures performed
 
 ## 🌍 Why This Project Exists
 
