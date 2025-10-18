@@ -11,20 +11,19 @@
 ## 📋 Table of Contents
 
 ### How to use the Dashboard
-- [Data Requirements](#Data-Requirements)
-- [Installation & Setup](#Installation-Setup)
-- [How to Use the Dashboard](#How-to-Use-the-Dashboard)
+- [Data Requirements][(#Data-Requirements)](https://github.com/BradleyMatican25/leanonme/tree/main#-data-requirements)
+- [Installation & Setup](#Installation-Setup)https://github.com/BradleyMatican25/leanonme/tree/main#-installation--setup
+- [How to Use the Dashboard](#How-to-Use-the-Dashboard)https://github.com/BradleyMatican25/leanonme/tree/main#-how-to-use-the-dashboard
 
 ### Nurse Ticktock's Background
 - [Backstory: From Crisis to Solution][(#backstory-from-crisis-to-solution)](https://github.com/BradleyMatican25/leanonme/tree/main#-backstory-from-crisis-to-solution)
-- [Problem Statement & Project Scope](#problem-statement-project-scope)
-- [Problem Statement & Project Scope](#problem-statement-project-scope)
-- [Solution Overview](#solution-overview)
-- [Impact & Results](#impact--results)
-- [Six Sigma Methodology](#six-sigma-methodology)
-- [Critical Assumptions](#critical-assumptions)
-- [Stakeholder Details & Use Cases](#stakeholder-details--use-cases)
-- [Team](#team)
+- [Problem Statement & Project Scope](#problem-statement-project-scope)(https://github.com/BradleyMatican25/leanonme/tree/main#-problem-statement--project-scope)
+- [Solution Overview](#solution-overview)(https://github.com/BradleyMatican25/leanonme/tree/main#-solution-overview)
+- [Impact & Results](#impact--results)(https://github.com/BradleyMatican25/leanonme/tree/main#-impact--results)
+- [Six Sigma Methodology](#six-sigma-methodology)(https://github.com/BradleyMatican25/leanonme/tree/main#-six-sigma-methodology)
+- [Critical Assumptions](#critical-assumptions)(https://github.com/BradleyMatican25/leanonme/tree/main#-critical-assumptions)
+- [Stakeholder Details & Use Cases](#stakeholder-details--use-cases)(https://github.com/BradleyMatican25/leanonme/tree/main#-stakeholder-details--use-cases)
+- [Team](#team)(https://github.com/BradleyMatican25/leanonme/tree/main#-team)
 
 
 
