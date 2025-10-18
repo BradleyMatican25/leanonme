@@ -14,6 +14,45 @@ That’s why our team developed **Lean On Me**—a lightweight, data-driven qual
 ## Project Scope
 To build a lightweight, data-driven tool that tracks inpatient wait times, identifies excessive delays in staff visits, and provides actionable alerts to improve care quality and responsiveness.
 
+## 📊 Problem Flow: Why We Built Lean On Me
+```mermaid
+flowchart TD
+    A[1. INEFFICIENT JOB DISTRIBUTION] --> B[Some staff handle 12 patients, others handle 4]
+    B --> C[2. WORKLOAD IMBALANCE]
+    C --> D[Overworked staff: rushed visits, missed checks]
+    C --> E[Underutilized staff: idle time, boredom]
+    D --> F[3. UNEVEN PATIENT CARE]
+    E --> F
+    F --> G[Patients of overworked staff: long wait times]
+    F --> H[Patients of underutilized staff: frequent visits]
+    G --> I[4. POOR PATIENT OUTCOMES]
+    H --> I
+    I --> J[Delayed response to deterioration]
+    I --> K[Extended length of stay]
+    I --> L[Lower patient satisfaction]
+    I --> M[Increased staff burnout]
+    J --> N[5. QUALITY AND COST ISSUES]
+    K --> N
+    L --> N
+    M --> N
+    N --> O[Hospital penalties for poor quality metrics]
+    N --> P[Staff turnover due to burnout and rehiring costs]
+    N --> Q[Patient complaints and legal risks]
+
+```
+## System Logic
+
+**Inputs:**
+- Patient wait times
+- Minimum of 2 staff visits required before discharge
+- Threshold for excessive wait time (to be defined)
+
+**Outputs:**
+- Flagged patients who need immediate attention
+- Alerts for staff to prioritize visits
+- Improved discharge readiness and care balance
+
+
 ## Features
 - Synthetic data generation for patient and staff activity
 - Real-time tracking of wait times between visits
