@@ -187,7 +187,7 @@ This project demonstrates core Six Sigma principles:
 ## Team
 
 **Created for:** SYSEN 5300 Six Sigma Hackathon 2025  
-**Team Members:** Deepro Bandyopadhyay, Chris Lasa, Bradley Matican, Sreekar Mukkamala
+**Team Members:** Deepro Bandyopadhyay, Chris Lasa, Bradley Matican, Sreekar Mukkamala  
 **Institution:** Cornell University  
 
 ---
