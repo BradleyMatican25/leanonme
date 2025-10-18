@@ -17,16 +17,13 @@
 
 ### Nurse Ticktock's Background
 - [Backstory: From Crisis to Solution](#backstory-from-crisis-to-solution)
-- [Problem Statement & Project Scope](#problem-statement-project-scope)
-- [Problem Statement & Project Scope](#problem-statement-project-scope)
+- [Problem Statement & Project Scope](#problem-statement--project-scope)
 - [Solution Overview](#solution-overview)
 - [Impact & Results](#impact--results)
 - [Six Sigma Methodology](#six-sigma-methodology)
 - [Critical Assumptions](#critical-assumptions)
 - [Stakeholder Details & Use Cases](#stakeholder-details--use-cases)
 - [Team](#team)
-
-
 
 
 
