@@ -1,4 +1,4 @@
-# Hospital Wait Time Quality Control System
+# # Closing the 9-Hour Care Gap: Real-Time Staff Rebalancing Cuts Patient Wait Times by 40%
 
 **SYSEN 5300 Six Sigma Hackathon 2025 - Cornell University**
 
