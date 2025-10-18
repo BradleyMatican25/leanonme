@@ -15,7 +15,7 @@
 - [Installation & Setup](#installation--setup)
 - [How to Use the Dashboard](#how-to-use-the-dashboard)
 
-### Dr.Wait's Background
+### Nurse Ticktock's Background
 - [Backstory: From Crisis to Solution](#backstory-from-crisis-to-solution)
 - [Problem Statement & Project Scope](#problem-statement--project-scope)
 - [Problem Statement & Project Scope](#problem-statement--project-scope)
