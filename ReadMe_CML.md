@@ -552,6 +552,8 @@ This project demonstrates the synergy between Design Thinking and Six Sigma:
 - Chris Lasa
 - Bradley Matican
 - Sreekar Mukkamala
+
+
 **Institution:** Cornell University  
 
 
