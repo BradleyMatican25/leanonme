@@ -10,12 +10,12 @@
 
 ## 📋 Table of Contents
 
-### How to use the Dashboard
+## How to use the Dashboard
 - [Data Requirements](#data-requirements)
 - [Installation & Setup](#installation-and-setup)
 - [How to Use the Dashboard](#how-to-use-the-dashboard)
 
-### Nurse Ticktock's Background
+## Nurse Ticktock's Background
 - [Backstory: From Crisis to Solution](#backstory-from-crisis-to-solution)
 - [Problem Statement & Project Scope](#problem-statement-and-project-scope)
 - [Solution Overview](#solution-overview)
@@ -24,8 +24,6 @@
 - [Critical Assumptions](#critical-assumptions)
 - [Stakeholder Details & Use Cases](#stakeholder-details-and-use-cases)
 - [Team](#team)
-
-
 
 
 
