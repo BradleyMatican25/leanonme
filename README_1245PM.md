@@ -330,27 +330,46 @@ flowchart TB
 ### Dashboard Features
 
 #### **Tab 1: Live Dashboard** (Charge Nurses)
-- **4 value boxes**: Average Wait, Max Wait, Active Alerts, Compliance Rate
+- **4 value boxes**: Average Wait Time, Max Wait Time, Active Alerts, Compliance Rate
+  - Color-coded: Green (good), Yellow (warning), Red (critical)
+  - Real-time updates based on current patient data
 - **Critical alerts table**: Patients needing IMMEDIATE attention (>1.5× threshold)
-- **Wait time by acuity chart**: Visual comparison against thresholds
+  - Shows: Patient ID, Room, Acuity, Wait Time, Assigned Nurse
+- **Wait time by acuity chart**: Visual comparison of average wait vs. thresholds
+  - Interactive plotly chart with hover details
 - **Patient status overview**: Sortable, filterable table with color-coded severity
+  - Filter by acuity level using sidebar dropdown
 
 #### **Tab 2: Staff Workload Analysis** (Nurse Managers)
 - **3 value boxes**: Workload Variance, Overloaded Staff Count, Underutilized Staff Count
+  - Variance target: <4.0 (green if met)
+  - Overload: Score >20 (red if any)
+  - Underutilized: Score <10 (yellow if >1)
 - **Workload distribution chart**: Bar chart with 20-point overload threshold line
+  - Color-coded bars: Green (OK), Red (overloaded), Yellow (underutilized)
+  - Shows patient count and acuity score per nurse
 - **Reassignment recommendations table**: Specific patient moves to balance workload
-- **Staff workload details**: Acuity breakdown per nurse
+  - Lists: Patient ID, Room, Acuity, From Nurse, To Nurse, Reason
+  - Only shows when overloaded AND underutilized nurses exist
+- **Staff workload details**: Complete acuity breakdown per nurse
+  - Shows: Total patients, High/Medium/Low counts, Acuity Score, Status
 
 #### **Tab 3: Patient Details** (Floor Nurses)
 - **Complete patient list** with color-coded wait times
-- **Filter by acuity level**: High, Medium, Low
-- **Searchable and sortable table**
+  - Green: <3 hours (on schedule)
+  - Yellow: 3-5 hours (approaching threshold)
+  - Orange: 5-7 hours (overdue)
+  - Red: >7 hours (critical delay)
+- **Filter by acuity level**: High, Medium, Low, or All
+- **Searchable and sortable table**: Standard DataTables functionality
 
 #### **Tab 4: About** (All Users)
-- Complete project documentation
-- Facility profile and problem context
-- How-to guide for users
-- Metric definitions and thresholds
+- **Facility Profile**: St. Mary's Hospital Floor 3 specifications
+  - 80 beds, 6 nurses/shift, 1:6 ratio
+  - Problem context and impact metrics
+- **Technology & Team**: Built with R, Shiny, plotly, Six Sigma tools
+  - Team member names and roles
+  - Cornell University SYSEN 5300
 
 ---
 
@@ -393,24 +412,29 @@ To upload your own patient data, create a CSV file with these **5 required colum
 | Column Name | Data Type | Description | Example Values | Validation |
 |-------------|-----------|-------------|----------------|------------|
 | `patient_id` | Text | Unique patient identifier | P001, P002, P003 | Must be unique |
-| `room_number` | Integer | Patient's room number | 301, 302, 315 | Typically 301-320 |
-| `acuity_level` | Text | Patient acuity category | High, Medium, Low | **Case-sensitive!** |
-| `assigned_nurse` | Text | Assigned nurse ID | N01, N03, N08 | Any nurse ID |
+| `room_number` | Integer | Patient's room number | 301, 302, 315 | Typically 301-320 for Floor 3 |
+| `acuity_level` | Text | Patient acuity category | High, Medium, Low | **Case-sensitive!** Exactly as shown |
+| `assigned_nurse` | Text | Assigned nurse ID | N01, N03, N08 | Any nurse identifier (N01, N03, N04, N08, N12, N15 in demo) |
 | `hours_since_last_visit` | Decimal | Hours since last nurse visit | 1.5, 3.8, 8.7 | Must be ≥ 0 |
 
 ### ⚠️ Important Data Rules
 
 1. **Acuity Level** must be EXACTLY: `High`, `Medium`, or `Low` (case-sensitive)
-   - ❌ Wrong: `high`, `HIGH`, `med`
+   - ❌ Wrong: `high`, `HIGH`, `med`, `h`, `H`
    - ✅ Correct: `High`, `Medium`, `Low`
 
 2. **No missing values** - all 5 columns required for every row
+   - Empty cells will cause errors
 
 3. **Decimal format**: Use period (.) not comma (,)
    - ❌ Wrong: `3,5`
    - ✅ Correct: `3.5`
 
 4. **Hours must be ≥ 0**: Negative values will cause errors
+   - ❌ Wrong: `-2.5`
+   - ✅ Correct: `0.0`, `2.5`, `8.3`
+
+5. **Patient IDs must be unique**: No duplicate patient_id values
 
 ### Example CSV File
 ```csv
@@ -440,9 +464,24 @@ The system applies these evidence-based thresholds:
 ### Alert Triggers
 
 - ⚠️ **WARNING**: >1.0× threshold (patient approaching limit)
-  - Example: High acuity patient at 2.3 hours
+  - Example: High acuity patient at 2.3 hours (>2.0 threshold)
+  - Color: Yellow in tables
 - 🔴 **CRITICAL**: >1.5× threshold (immediate action required)
-  - Example: High acuity patient at 3.0+ hours
+  - Example: High acuity patient at 3.0+ hours (>3.0 = 1.5×2.0)
+  - Color: Red in tables
+  - Appears in "Critical Alerts" table
+
+### Workload Scoring
+
+**Per-Nurse Acuity Score** = (High patients × 3) + (Medium patients × 2) + (Low patients × 1)
+
+| Status | Score Range | Color | Meaning |
+|--------|-------------|-------|---------|
+| **Underutilized** | <10 | Yellow | Capacity available for reassignments |
+| **OK** | 10-20 | Green | Balanced workload |
+| **Overloaded** | >20 | Red | Too many patients; reassignment recommended |
+
+**Target Workload Variance**: Standard deviation <4.0 across all nurses
 
 ---
 
@@ -475,7 +514,7 @@ cd lean-on-me
 2. **Run the app:**
 ```r
 # In R or RStudio
-shiny::runApp("app.R")
+shiny::runApp("Shiny_App_CML.R")
 ```
 
 3. **Open in browser:**
@@ -483,7 +522,16 @@ The app will automatically open at `http://127.0.0.1:XXXX`
 
 ### 🎉 Demo Mode
 
-**No data files needed!** The app includes built-in mock data representing a typical Floor 3 with workload imbalance issues. Just run the app and start exploring.
+**No data files needed!** The app includes built-in mock data representing a typical Floor 3 with workload imbalance issues:
+- 80 patients (15% High, 50% Medium, 35% Low acuity)
+- 6 nurses (N01, N03, N04, N08, N12, N15)
+- Randomized room assignments (301-320)
+- Wait times ranging 0-10 hours
+
+Just run the app and start exploring. You'll see:
+- Some nurses overloaded (red status)
+- Some patients in CRITICAL status (red alerts)
+- Reassignment recommendations generated automatically
 
 ---
 
@@ -492,30 +540,36 @@ The app will automatically open at `http://127.0.0.1:XXXX`
 ### For Charge Nurses (Shift Start: 7am/3pm/11pm)
 
 1. **Navigate to Live Dashboard tab**
-   - Review current alerts and compliance rate
+   - Review 4 value boxes at top for overall status
    - Check critical alerts table for immediate action items
+   - Review patient status overview for all 80 patients
 
 2. **Switch to Staff Workload tab**
    - Check workload variance (target: <4.0)
    - Review overloaded/underutilized staff counts
+   - Look at distribution bar chart for visual representation
 
 3. **Review Reassignment Recommendations**
-   - If variance >4.0 or staff overloaded, review recommended patient moves
+   - If variance >4.0 or staff overloaded, review table
    - System suggests moving LOW/MEDIUM acuity patients from overloaded to underutilized nurses
+   - Example: Move P045 (Low, Room 312) from N01 (overloaded) to N15 (underutilized)
 
 4. **Execute reassignments in hospital EMR**
    - Make changes in your hospital's EMR system
    - Document rationale for assignment changes
 
-5. **Click Refresh Alerts button**
-   - Update metrics after changes
-   - Verify improvements in workload distribution
+5. **Click Refresh Alerts button (sidebar)**
+   - System will show alert popup based on current status
+   - CRITICAL alert: >0 critical patients
+   - WARNING alert: >0 patients approaching threshold
+   - ALL CLEAR: All patients within standards
 
 ### For Floor Nurses (During Shift)
 
 1. **View Patient Details tab**
-   - See all your assigned patients
+   - See all patients on the floor
    - Check "Hours Since Visit" column to prioritize rounds
+   - Sort by wait time to find who needs attention
 
 2. **Use color coding to identify urgent patients:**
    - 🟢 **Green** (<3 hrs): On schedule
@@ -523,34 +577,43 @@ The app will automatically open at `http://127.0.0.1:XXXX`
    - 🟠 **Orange** (5-7 hrs): Overdue
    - 🔴 **Red** (>7 hrs): Critical delay
 
-3. **Monitor your workload**
-   - Check Staff Workload tab to see your acuity score
-   - Understand if you're overloaded vs. colleagues
+3. **Use acuity filter (sidebar)**
+   - Filter to see only your acuity level patients
+   - Example: "High" to see all high-acuity patients
 
-4. **Flag concerns**
+4. **Monitor your workload (Staff Workload tab)**
+   - Check your acuity score vs. colleagues
+   - Understand if you're overloaded vs. others
+   - Green bar = balanced, Red bar = overloaded, Yellow bar = underutilized
+
+5. **Flag concerns**
    - If you believe a patient needs higher acuity classification, notify charge nurse
    - Request reassignment if workload becomes unmanageable
 
 ### For Nurse Managers (Daily Review)
 
 1. **Review compliance rate trend** (target: >95%)
-   - Daily monitoring of percentage of patients within thresholds
+   - Daily monitoring of % of patients within thresholds
+   - Track improvement over time
    - Identify patterns (e.g., specific shifts with consistent problems)
 
 2. **Check workload variance by shift** (target: <4.0)
    - Morning shift (7am-3pm)
    - Evening shift (3pm-11pm)
    - Night shift (11pm-7am)
+   - Lower variance = better balance
 
 3. **Identify systematic patterns**
    - Which shifts consistently have higher variance?
    - Which nurses consistently overloaded or underutilized?
    - Are specific room assignments causing problems?
+   - Is acuity scoring accurate?
 
 4. **Export data for reporting**
-   - Use Patient Details tab to export CSV
+   - Use built-in DataTables export buttons (CSV, Excel)
    - Generate monthly reports for hospital administration
    - Track improvement trends over time
+   - Share data with quality committee
 
 ---
 
@@ -562,11 +625,11 @@ This project applies the DMAIC framework to systematically improve patient care 
 
 | Phase | Activities | Our Application |
 |-------|-----------|-----------------|
-| **Define** | Define the problem, project goals, and customer requirements | Stakeholder interviews revealed irregular care gaps; defined problem as process deficiency |
-| **Measure** | Measure current process performance and establish baseline | Measured: 72% compliance, 6.8 workload variance, 5.8hr avg wait time |
-| **Analyze** | Identify root causes using statistical tools | Root cause analysis: assignment-by-proximity instead of acuity-based distribution |
-| **Improve** | Develop and implement solutions to eliminate root causes | Built acuity-weighted algorithm and real-time monitoring dashboard |
-| **Control** | Maintain improvements and monitor ongoing performance | Established control metrics: compliance rate, workload variance, SPC charts |
+| **Define** | Define the problem, project goals, and customer requirements | Stakeholder interviews revealed irregular care gaps; defined problem as process deficiency, not resource shortage |
+| **Measure** | Measure current process performance and establish baseline | Measured baseline: 72% compliance, 6.8 workload variance, 5.8hr avg wait time, 23% turnover |
+| **Analyze** | Identify root causes using statistical tools | Root cause analysis using Fishbone diagram and 5 Whys: assignment-by-proximity instead of acuity-based distribution |
+| **Improve** | Develop and implement solutions to eliminate root causes | Built acuity-weighted algorithm, real-time monitoring dashboard, and intelligent reassignment recommendations |
+| **Control** | Maintain improvements and monitor ongoing performance | Established control metrics: compliance rate, workload variance, SPC charts for continuous monitoring |
 
 ---
 
@@ -601,12 +664,28 @@ PEOPLE                          PROCESS                         TECHNOLOGY      
 
 ### Statistical Process Control
 
-The dashboard includes control charts for ongoing monitoring:
+The dashboard enables ongoing SPC monitoring:
 
-- **Compliance Rate Control Chart**: Tracks % of patients within thresholds over time
-- **Workload Variance Control Chart**: Monitors standard deviation of acuity scores by shift
-- **Upper/Lower Control Limits**: Automatically calculated based on baseline data
-- **Special Cause Detection**: Alerts when metrics exceed 3-sigma limits
+**Control Metrics Tracked:**
+- **Compliance Rate**: % of patients within thresholds
+  - UCL (Upper Control Limit): 100%
+  - Target: >95%
+  - LCL (Lower Control Limit): 85%
+
+- **Workload Variance**: Standard deviation of acuity scores
+  - Target: <4.0
+  - Warning: >4.0
+  - Critical: >6.0
+
+- **Average Wait Time**: Mean hours since last visit
+  - Target: <3.5 hours
+  - Warning: >4.0 hours
+  - Critical: >5.0 hours
+
+**Special Cause Detection:**
+- Alerts when metrics exceed 3-sigma limits
+- Identifies trends (7+ consecutive points increasing/decreasing)
+- Flags outliers for investigation
 
 ---
 
@@ -708,7 +787,7 @@ All assumptions must be validated before implementation. These are organized by 
 **How They Use Lean On Me:**
 - View dashboard at shift start showing all 80 patients and current assignments
 - Receive algorithmic recommendations for balanced assignments
-- Approve/override recommendations with one click
+- Approve/override recommendations
 - Real-time monitoring of workload variance and compliance rate
 - Immediate alerts if patient exceeds visit threshold
 - Quick access to reassignment recommendations during shift
@@ -903,10 +982,10 @@ Real-time data and simple algorithms can dramatically improve coordination witho
 
 ### Project Team
 
-- **Deepro Bandyopadhyay** - Data Analytics & Six Sigma Analysis
-- **Chris Lasa** - System Architecture & Algorithm Design  
-- **Bradley Matican** - UI/UX Design & User Research
-- **Sreekar Mukkamala** - Clinical Validation & Process Mapping
+- **Deepro Bandyopadhyay** 
+- **Chris Lasa** 
+- **Bradley Matican** 
+- **Sreekar Mukkamala** 
 
 ### Acknowledgments
 
