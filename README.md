@@ -390,7 +390,7 @@ flowchart TB
     style D fill:#fff3cd
 ```
 
-## ## Prototype: The Solution Architecture
+## Prototype: The Solution Architecture
 
 ### System Overview
 
