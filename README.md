@@ -12,8 +12,8 @@
 
 ### How to use the Dashboard
 - [Data Requirements][(#Data-Requirements)](https://github.com/BradleyMatican25/leanonme/tree/main#-data-requirements)
-- [Installation & Setup](#Installation-Setup)https://github.com/BradleyMatican25/leanonme/tree/main#-installation--setup
-- [How to Use the Dashboard](#How-to-Use-the-Dashboard)https://github.com/BradleyMatican25/leanonme/tree/main#-how-to-use-the-dashboard
+- [Installation & Setup](#Installation-Setup)(https://github.com/BradleyMatican25/leanonme/tree/main#-installation--setup)
+- [How to Use the Dashboard](#How-to-Use-the-Dashboard)(https://github.com/BradleyMatican25/leanonme/tree/main#-how-to-use-the-dashboard)
 
 ### Nurse Ticktock's Background
 - [Backstory: From Crisis to Solution][(#backstory-from-crisis-to-solution)](https://github.com/BradleyMatican25/leanonme/tree/main#-backstory-from-crisis-to-solution)
