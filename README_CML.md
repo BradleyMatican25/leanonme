@@ -11,19 +11,18 @@
 ## 📋 Table of Contents
 
 ### How to use the Dashboard
-- [Data Requirements](#Data-Requirements)
-- [Installation & Setup](#Installation-Setup)
-- [How to Use the Dashboard](#How-to-Use-the-Dashboard)
+- [Data Requirements](#data-requirements)
+- [Installation & Setup](#installation-and-setup)
+- [How to Use the Dashboard](#how-to-use-the-dashboard)
 
 ### Nurse Ticktock's Background
 - [Backstory: From Crisis to Solution](#backstory-from-crisis-to-solution)
-- [Problem Statement & Project Scope](#problem-statement-project-scope)
-- [Problem Statement & Project Scope](#problem-statement-project-scope)
+- [Problem Statement & Project Scope](#problem-statement-and-project-scope)
 - [Solution Overview](#solution-overview)
-- [Impact & Results](#impact--results)
+- [Impact & Results](#impact-and-results)
 - [Six Sigma Methodology](#six-sigma-methodology)
 - [Critical Assumptions](#critical-assumptions)
-- [Stakeholder Details & Use Cases](#stakeholder-details--use-cases)
+- [Stakeholder Details & Use Cases](#stakeholder-details-and-use-cases)
 - [Team](#team)
 
 
