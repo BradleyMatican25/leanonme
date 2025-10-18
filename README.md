@@ -11,7 +11,7 @@
 ## 📋 Table of Contents
 
 ### How to use the Dashboard
-- [Data Requirements](https://github.com/BradleyMatican25/leanonme/blob/main/README.md#data-requirements)
+- [Data Requirements](https://github.com/BradleyMatican25/leanonme/blob/main/README.md?plain=1#data-requirements)
 - [Installation & Setup](#installation--setup)
 - [How to Use the Dashboard](#how-to-use-the-dashboard)
 
