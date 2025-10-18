@@ -695,7 +695,11 @@ A: Yes! Simply:
 
 ### Team Members
 
-- [Your names here]
+- Deepro Bandyopadhyay
+- Chris Lasa
+- Bradley Matican
+- Sreekar Mukkamala
+
 
 ### Affiliation
 
