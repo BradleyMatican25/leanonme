@@ -11,9 +11,9 @@
 ## 📋 Table of Contents
 
 ### How to use the Dashboard
-- [Data Requirements](##Data-Requirements)
-- [Installation & Setup](#installation--setup)
-- [How to Use the Dashboard](#how-to-use-the-dashboard)
+- [Data Requirements](#Data-Requirements)
+- [Installation & Setup](#Installation--Setup)
+- [How to Use the Dashboard](#How-to-Use-the-Dashboard)
 
 ### Nurse Ticktock's Background
 - [Backstory: From Crisis to Solution](#backstory-from-crisis-to-solution)
