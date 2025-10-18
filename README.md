@@ -16,7 +16,7 @@
 - [How to Use the Dashboard](#How-to-Use-the-Dashboard)
 
 ### Nurse Ticktock's Background
-- [Backstory: From Crisis to Solution](#backstory-from-crisis-to-solution)
+- [Backstory: From Crisis to Solution][(#backstory-from-crisis-to-solution)](https://github.com/BradleyMatican25/leanonme/tree/main#-backstory-from-crisis-to-solution)
 - [Problem Statement & Project Scope](#problem-statement-project-scope)
 - [Problem Statement & Project Scope](#problem-statement-project-scope)
 - [Solution Overview](#solution-overview)
