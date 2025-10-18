@@ -8,7 +8,7 @@ Nestled in a quiet corner of rural New York, our hospital is small but mighty. W
 
 Patients have increasingly voiced concerns about long and unpredictable gaps between staff visits during their inpatient stays. These delays not only affect their perception of care but can also lead to extended hospitalizations and missed treatment opportunities. With limited personnel and no existing system to track these interactions, we knew something had to change.
 
-That’s why our team developed Lean On Me—a lightweight, data-driven quality control system designed to monitor inpatient wait times, flag excessive delays, and empower staff to respond more efficiently. Built during the SYSEN 5300 Hackathon, this tool simulates hospital workflows using synthetic data and applies Six Sigma principles to help small hospitals like ours deliver big improvements in care.
+That’s why our team developed **Lean On Me**—a lightweight, data-driven quality control system designed to monitor inpatient wait times, flag excessive delays, and empower staff to respond more efficiently. Built during the SYSEN 5300 Hackathon, this tool simulates hospital workflows using synthetic data and applies Six Sigma principles to help small hospitals like ours deliver big improvements in care.
 
 ## Background: The Hospital Context
 
