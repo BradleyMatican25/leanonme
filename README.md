@@ -81,7 +81,7 @@ We conducted interviews with three key stakeholder groups:
 ### Define: Framing the Problem
 
 **Problem Statement:**
-Irregular patient care gaps (ranging from 2 to 9+ hours between visits) occur on Floor 3 despite adequate staffing, caused by inefficient workload distribution during shift assignments, resulting in:
+Irregular patient care gaps (ranging from 2 to 8+ hours between visits) occur on Floor 3 despite adequate staffing, caused by inefficient workload distribution during shift assignments, resulting in:
 - 72% compliance rate (target: >95%)
 - 37.5% of patients exceeding care thresholds
 - Patient complaints tripling over 6 months
@@ -315,7 +315,7 @@ flowchart TD
 ```
 
 **Data Captured:**
-- Patient ID (auto-generated: P001-P080)
+- Patient ID (auto-generated: P101-P230)
 - Room Number (301-320)
 - Admission Timestamp
 - Acuity Level (High/Medium/Low)
