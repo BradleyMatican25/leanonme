@@ -1,4 +1,4 @@
-# Lean On Me: Real-Time Staff Rebalancing Cuts Patient Wait Times by 40%
+# Nurse Ticktock: Real-Time Staff Rebalancing Cuts Patient Wait Times by 40%
 
 **SYSEN 5300 Six Sigma Hackathon 2025 - Cornell University**
 
@@ -15,7 +15,7 @@
 - [Installation & Setup](#installation--setup)
 - [How to Use the Dashboard](#how-to-use-the-dashboard)
 
-### Lean on Me's Background
+### Dr.Wait's Background
 - [Backstory: From Crisis to Solution](#backstory-from-crisis-to-solution)
 - [Problem Statement & Project Scope](#problem-statement--project-scope)
 - [Solution Overview](#solution-overview)
@@ -225,7 +225,7 @@ She reached out to Cornell University's Engineering Department about potential s
 
 ## ✅ What This System Does (In Scope)
 
-**Lean On Me** is a real-time quality control dashboard designed specifically to:
+**Nurse Ticktock** is a real-time quality control dashboard designed specifically to:
 
 ### 1. Monitor Nursing Visit Frequency
 - Track time elapsed since last nursing visit for every patient
@@ -348,13 +348,13 @@ graph LR
     style B4 fill:#f8d7da
 
 
----
+```
 
 ## 💡 Solution Overview
 
-### What Lean On Me Does
+### What Nurse Ticktock Does
 
-**Lean On Me** is a real-time quality control dashboard that:
+**Nurse Ticktock** is a real-time quality control dashboard that:
 
 1. **Monitors nursing visit frequency** across all 80+ patients
 2. **Generates automated alerts** when visit intervals exceed safe thresholds
@@ -845,7 +845,7 @@ All assumptions must be validated before implementation. These are organized by 
 - Discover problems too late (after patient complaints)
 - No systematic method for balancing workload
 
-**How They Use Lean On Me:**
+**How They Use Nurse Ticktock:**
 - View dashboard at shift start showing all 80 patients and current assignments
 - Receive algorithmic recommendations for balanced assignments
 - Approve/override recommendations
@@ -871,7 +871,7 @@ All assumptions must be validated before implementation. These are organized by 
 - Feel guilt about long gaps between visits
 - No transparency into assignment rationale
 
-**How They Use Lean On Me:**
+**How They Use Nurse Ticktock:**
 - View dashboard showing their assigned patients and time since last visit
 - Receive alerts when next patient is due for visit
 - See colleagues' workloads (transparency; understand if reassignment needed)
@@ -895,7 +895,7 @@ All assumptions must be validated before implementation. These are organized by 
 - Can't flag high-risk patients for extra nursing support
 - Limited visibility into nursing care delivery
 
-**How They Use Lean On Me:**
+**How They Use Ticktock:**
 - Receive alert if "their" patient exceeds visit threshold (e.g., post-op patient waiting 3+ hours for pain assessment)
 - Optional: request increased visit frequency for specific patients ("PRN visits" for this patient)
 - View compliance metrics during morning rounds (awareness of care quality)
@@ -919,7 +919,7 @@ All assumptions must be validated before implementation. These are organized by 
 - Can't determine if problem is resources or coordination
 - Can't justify technology investments without data
 
-**How They Use Lean On Me:**
+**How They Use Ticktock:**
 - **Business case**: Prove problem is coordination (not hiring) using before/after data
 - **Financial impact**: Calculate savings from reduced extended stays, improved HCAHPS scores, reduced turnover
 - **Accreditation metrics**: Compliance rate data for hospital quality reports
@@ -948,7 +948,7 @@ All assumptions must be validated before implementation. These are organized by 
 - Delayed pain management
 - Extended stays due to poor coordination
 
-**How They Benefit from Lean On Me:**
+**How They Benefit from Nurse TickTock:**
 - More predictable visit timing (reduced anxiety)
 - Faster response to call buttons (improved care)
 - Better pain management (faster pain assessments)
@@ -989,7 +989,7 @@ All assumptions must be validated before implementation. These are organized by 
 - Data integrity
 - EMR integration feasibility
 
-**How They Use Lean On Me:**
+**How They Use Nurse Ticktock:**
 - Deploy and maintain system
 - Troubleshoot technical issues
 - Ensure HIPAA compliance
