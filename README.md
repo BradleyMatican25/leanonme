@@ -1283,13 +1283,6 @@ Real-time data and simple algorithms can dramatically improve coordination witho
 
 ## 📚 Additional Resources
 
-### Documentation
-
-- [Detailed Technical Documentation](docs/TECHNICAL.md)
-- [User Guide for Charge Nurses](docs/USER_GUIDE.md)
-- [API Documentation](docs/API.md)
-- [Data Dictionary](docs/DATA_DICTIONARY.md)
-
 ### Research & References
 
 - Nursing Solutions Inc. (2024). *NSI National Health Care Retention & RN Staffing Report*
@@ -1302,28 +1295,4 @@ Real-time data and simple algorithms can dramatically improve coordination witho
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
-
----
-
-## 📧 Contact
-
-**Project Repository:** [github.com/yourusername/lean-on-me](https://github.com/yourusername/lean-on-me)
-
-**Questions?** Open an issue or contact the team.
-
----
-
-## 🌟 Star History
-
-If this project helped your hospital improve patient care, please ⭐ star this repo!
-
----
-
-**Built with ❤️ and Six Sigma principles to improve patient care**
-
-*SYSEN 5300 Six Sigma Hackathon 2025 - Cornell University*
+*Six Sigma Hackathon 2025 - Cornell University*
