@@ -42,7 +42,7 @@
 
 ---
 
-## Problem Statement: Design Thinking Approach
+## Problem Scope
 
 ### Empathize: Understanding the Human Pain Points
 
