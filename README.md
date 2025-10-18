@@ -94,8 +94,8 @@ Irregular patient care gaps (ranging from 2 to 9+ hours between visits) occur on
 ## Root Cause Analysis: Fishbone Diagram
 ```mermaid
 graph LR
-    A[IRREGULAR PATIENT<br/>CARE GAPS<br/>9+ hours between visits] 
-    
+    A[IRREGULAR PATIENT<br/>CARE GAPS<br/>8+ hours between visits] 
+
     B1[PEOPLE]
     B2[PROCESS]
     B3[TECHNOLOGY]
