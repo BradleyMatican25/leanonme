@@ -18,6 +18,7 @@
 ### Dr.Wait's Background
 - [Backstory: From Crisis to Solution](#backstory-from-crisis-to-solution)
 - [Problem Statement & Project Scope](#problem-statement--project-scope)
+- [Problem Statement & Project Scope](#problem-statement--project-scope)
 - [Solution Overview](#solution-overview)
 - [Impact & Results](#impact--results)
 - [Six Sigma Methodology](#six-sigma-methodology)
@@ -246,6 +247,7 @@ She reached out to Cornell University's Engineering Department about potential s
 - Provide charge nurses with real-time data for shift assignments
 - Generate compliance metrics for clinical oversight
 - Create statistical process control charts for trend monitoring
+
 
 ---
 
